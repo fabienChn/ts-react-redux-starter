@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-airbnb",
+    "tslint-react",
+    "tslint-eslint-rules",
+    "tslint-config-prettier"
+  ],
+  "defaultSeverity": "warning",
+  "jsRules": {},
+  "rules": {
+    "max-line-length": [true, 100],
+    "quotemark": [true, "single", "jsx-double"],
+    "ordered-imports": [false],
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "jsx-boolean-value": [false],
+    "jsx-no-multiline-js": [false],
+    "jsx-no-lambda": [false],
+    "jsx-space-before-trailing-slash": [true],
+    "import-name": [false],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
+    "object-literal-sort-keys": [false],
+    "ban-types": [false],
+    "align": [false],
+    "no-constant-condition": [true],
+    "newline-before-return": [true],
+    "typedef": [
+      true,
+      "call-signature",
+      "arrow-call-signature",
+      "parameter",
+      "property-declaration",
+      "array-destructuring",
+      "member-variable-declaration"
+    ],
+    "curly": true,
+    "no-conditional-assignment": true,
+    "no-unused-expression": true,
+    "no-var-keyword": true,
+    "prefer-object-spread": true,
+    "unnecessary-constructor": true,
+    "no-redundant-jsdoc": true,
+    "member-access": false
+  },
+  "rulesDirectory": []
+}

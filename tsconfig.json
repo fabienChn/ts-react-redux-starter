@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "paths": {
+      "src/*": ["*"]
+    },
+    "baseUrl": "src",
+    "types": ["node", "jest"],
+    "esModuleInterop": true,
+    "outDir": "compiled",
+    "rootDirs": ["src"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "exclude": [
+    "node_modules",
+    "config",
+    "scripts"
+  ]
+}
