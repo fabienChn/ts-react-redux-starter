@@ -37,7 +37,16 @@ module.exports = env => ({
         use: {
           loader: 'babel-loader',
           query: {
-            presets: ['@babel/env', '@babel/react', '@babel/typescript']
+            presets: ['@babel/env', '@babel/react', '@babel/typescript'],
+            plugins: [
+              [
+                "module-resolver",
+                {
+                  "root": ["./src"],
+                  "extensions": [".tsx", ".ts", ".js"]
+                }
+              ]
+            ]
           },
         },
       },
