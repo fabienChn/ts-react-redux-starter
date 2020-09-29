@@ -36,6 +36,9 @@ module.exports = env => ({
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          query: {
+            presets: ['@babel/env', '@babel/react', '@babel/typescript']
+          },
         },
       },
       {
