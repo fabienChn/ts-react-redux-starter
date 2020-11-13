@@ -33,6 +33,18 @@ module.exports = env => ({
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          query: {
+            presets: ['@babel/env', '@babel/react', '@babel/typescript'],
+            plugins: [
+              [
+                "module-resolver",
+                {
+                  "root": ["./src"],
+                  "extensions": [".tsx", ".ts", ".js"]
+                }
+              ]
+            ]
+          },
         },
       },
       {
@@ -87,6 +99,9 @@ module.exports = env => ({
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+      },
     }),
     new InterpolateHtmlPlugin(HtmlWebpackPlugin, {
       PUBLIC_URL: '',
