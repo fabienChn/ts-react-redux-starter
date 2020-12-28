@@ -101,16 +101,11 @@ module.exports = env => ({
     }),
   ],
   node: {
-    console: false,
     // Keep global, it's just an alias of window and used by many third party modules:
     global: true,
-    process: true,
     // Inline __filename and __dirname values:
     __filename: 'mock',
     __dirname: 'mock',
-    Buffer: true,
-    // Never embed a setImmediate implementation:
-    setImmediate: false,
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
