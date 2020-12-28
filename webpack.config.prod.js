@@ -121,17 +121,10 @@ module.exports = env => ({
     ]),
   ],
   node: {
-    console: false,
     // Keep global, it's just an alias of window and used by many third party modules:
     global: true,
-    // Turn off process to avoid bundling a nextTick implementation:
-    process: true,
     // Inline __filename and __dirname values:
     __filename: 'mock',
     __dirname: 'mock',
-    // Never embed a portable implementation of Node's Buffer module:
-    Buffer: true,
-    // Never embed a setImmediate implementation:
-    setImmediate: false,
   },
 });
