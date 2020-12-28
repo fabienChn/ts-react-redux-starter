@@ -3,8 +3,6 @@ const fs = require('fs');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
 const paths = require('./config/paths');
 const dotenvConfig = require('dotenv').config();
 
@@ -101,7 +99,6 @@ module.exports = env => ({
     new InterpolateHtmlPlugin(HtmlWebpackPlugin, {
       PUBLIC_URL: '',
     }),
-    new BundleAnalyzerPlugin(),
   ],
   node: {
     console: false,
