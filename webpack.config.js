@@ -43,7 +43,8 @@ module.exports = env => ({
                   "root": ["./src"],
                   "extensions": [".tsx", ".ts", ".js"]
                 }
-              ]
+              ],
+              '@babel/proposal-class-properties'
             ]
           },
         },
@@ -72,7 +73,7 @@ module.exports = env => ({
         ],
       },
       {
-        test: /\.(svg|png)$/,
+        test: /\.(png|jpe?g)$/i,
         use: {
           loader: 'file-loader',
           options: {
@@ -80,6 +81,10 @@ module.exports = env => ({
           },
         },
       },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      }
     ],
   },
   plugins: [

@@ -23,6 +23,9 @@ module.exports = env => ({
     },
     runtimeChunk: true,
   },
+  performance: {
+    hints: false,
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
   },
@@ -42,7 +45,8 @@ module.exports = env => ({
                   "root": ["./src"],
                   "extensions": [".tsx", ".ts", ".js"]
                 }
-              ]
+              ],
+              '@babel/proposal-class-properties'
             ]
           },
         },
@@ -71,7 +75,7 @@ module.exports = env => ({
         ],
       },
       {
-        test: /\.(svg|png)$/,
+        test: /\.(png|jpe?g)$/i,
         use: {
           loader: 'file-loader',
           options: {
@@ -80,13 +84,17 @@ module.exports = env => ({
         },
       },
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        loader: require.resolve('url-loader'),
-        options: {
-          limit: 10000,
-          name: 'static/media/[name].[hash:8].[ext]',
-        },
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       },
+      // {
+      //   test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+      //   loader: require.resolve('url-loader'),
+      //   options: {
+      //     limit: 10000,
+      //     name: 'static/media/[name].[hash:8].[ext]',
+      //   },
+      // },
     ],
   },
   plugins: [

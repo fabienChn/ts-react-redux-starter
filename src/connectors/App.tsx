@@ -2,11 +2,7 @@ import { ComponentClass } from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from 'store/actions';
-import { IStoreState, ActionsType, IEventsState } from 'store/types';
-
-interface IDispatchProps {
-  actions?: ActionsType;
-}
+import { IStoreState, IEventsState, IDispatchProps } from 'store/types';
 
 export interface IStateProps {
   events?: IEventsState;
@@ -29,7 +25,9 @@ export default <T extends {}>(
     };
   };
 
+  // @ts-ignore
   return connect<T & ConnectAppProps>(
+    // @ts-ignore
     mapStateToProps,
     mapDispatchToProps,
   )(Component);

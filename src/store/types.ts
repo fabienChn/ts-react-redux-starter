@@ -8,6 +8,10 @@ export type ActionsType = {
   [fnName in keyof typeof actions]?: typeof actions[fnName];
 };
 
+export interface IDispatchProps {
+  actions?: ActionsType;
+}
+
 export interface IStoreState {
   router: RouterState;
   events: IEventsState;
