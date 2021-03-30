@@ -4,8 +4,8 @@ import App from 'App';
 
 import { createShallowWrapper } from './testHelpers';
 
-describe('createShallowWrapper', () => {
-  it('returns a shallow wrapper', () => {
+describe('createShallowWrapper', (): void => {
+  it('returns a shallow wrapper', (): void => {
     const wrapper = createShallowWrapper(App, {
       blabla: false,
     });
